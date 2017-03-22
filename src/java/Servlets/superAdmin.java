@@ -6,12 +6,18 @@
 package Servlets;
 
 import DataBase_Objects.AirsupplyUser;
+import DataBase_Objects.Caracterise;
+import DataBase_Objects.CaracteriseId;
+import DataBase_Objects.HibernateUtil;
+import DataBase_Objects.Privilege;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 /**
  *
@@ -34,9 +40,18 @@ public class superAdmin extends HttpServlet {
     }
     
     private void createCustomerAdmin(String inpName, String inpSurName, String inpEmail, String inpPassword){
-        
-        AirsupplyUser newCusAdmin = new AirsupplyUser(0, 1, inpName, inpSurName, inpSurName, inpEmail, inpPassword);
-        
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction t = session.beginTransaction();
+        try{    
+            AirsupplyUser newCusAdmin = new AirsupplyUser(0, 1, inpName, inpSurName, inpSurName, inpEmail, inpPassword);
+            Privilege newPriv = (Privilege) session.get(Privilege.class, 2);
+            Caracterise newCar = new Caracterise(new CaracteriseId(newCusAdmin.getIdTy(), newPriv.getIdPr()));
+            
+            t.commit();
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            t.rollback();
+        }    
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -79,3 +94,4 @@ public class superAdmin extends HttpServlet {
     }// </editor-fold>
 
 }
+
