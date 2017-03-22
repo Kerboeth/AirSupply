@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22 mars 2017 17:41:28 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="DataBase_Objects.Po" table="PO" catalog="db_21401013" optimistic-lock="version">
+        <id name="poNumber" type="string">
+            <column name="PO_NUMBER" length="120" />
+            <generator class="assigned" />
+        </id>
+        <property name="idPayment" type="int">
+            <column name="ID_PAYMENT" not-null="true" />
+        </property>
+        <property name="idC" type="int">
+            <column name="ID_C" not-null="true" />
+        </property>
+        <property name="publicationDate" type="timestamp">
+            <column name="PUBLICATION_DATE" length="19" />
+        </property>
+        <property name="documentType" type="string">
+            <column name="DOCUMENT_TYPE" length="50" />
+        </property>
+        <property name="erpCreationDate" type="timestamp">
+            <column name="ERP_CREATION_DATE" length="19" />
+        </property>
+        <property name="currency" type="string">
+            <column name="CURRENCY" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

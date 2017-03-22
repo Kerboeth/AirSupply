@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22 mars 2017 17:41:28 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="DataBase_Objects.Customer" table="CUSTOMER" catalog="db_21401013" optimistic-lock="version">
+        <id name="idC" type="int">
+            <column name="ID_C" />
+            <generator class="assigned" />
+        </id>
+        <property name="nameC" type="string">
+            <column name="NAME_C" length="120" />
+        </property>
+        <property name="streetC" type="string">
+            <column name="STREET_C" length="120" />
+        </property>
+        <property name="zipC" type="string">
+            <column name="ZIP_C" length="5" />
+        </property>
+        <property name="cityC" type="string">
+            <column name="CITY_C" />
+        </property>
+        <property name="countrycodeC" type="string">
+            <column name="COUNTRYCODE_C" length="5" />
+        </property>
+    </class>
+</hibernate-mapping>

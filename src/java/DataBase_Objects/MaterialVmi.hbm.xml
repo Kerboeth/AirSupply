@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22 mars 2017 17:41:28 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="DataBase_Objects.MaterialVmi" table="MATERIAL_VMI" catalog="db_21401013" optimistic-lock="version">
+        <composite-id name="id" class="DataBase_Objects.MaterialVmiId">
+            <key-property name="idCmVmi" type="string">
+                <column name="ID_CM_VMI" length="50" />
+            </key-property>
+            <key-property name="idSmVmi" type="string">
+                <column name="ID_SM_VMI" length="50" />
+            </key-property>
+        </composite-id>
+        <property name="descritpionCmVmi" type="string">
+            <column name="DESCRITPION_CM_VMI" length="120" />
+        </property>
+        <property name="descriptionSmVmi" type="string">
+            <column name="DESCRIPTION_SM_VMI" length="120" />
+        </property>
+        <property name="netPrice" type="java.lang.Double">
+            <column name="NET_PRICE" precision="5" />
+        </property>
+        <property name="currency" type="string">
+            <column name="CURRENCY" />
+        </property>
+        <property name="payementTerms" type="string">
+            <column name="PAYEMENT_TERMS" />
+        </property>
+    </class>
+</hibernate-mapping>

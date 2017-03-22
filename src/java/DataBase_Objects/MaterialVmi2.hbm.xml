@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22 mars 2017 17:41:28 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="DataBase_Objects.MaterialVmi2" table="MATERIAL_VMI_2" catalog="db_21401013" optimistic-lock="version">
+        <composite-id name="id" class="DataBase_Objects.MaterialVmi2Id">
+            <key-property name="updateDate" type="timestamp">
+                <column name="UPDATE_DATE" length="19" />
+            </key-property>
+            <key-property name="referenceItem" type="string">
+                <column name="REFERENCE_ITEM" length="50" />
+            </key-property>
+            <key-property name="idCmVmi" type="string">
+                <column name="ID_CM_VMI" length="50" />
+            </key-property>
+            <key-property name="idSmVmi" type="string">
+                <column name="ID_SM_VMI" length="50" />
+            </key-property>
+            <key-property name="idS" type="string">
+                <column name="ID_S" length="120" />
+            </key-property>
+            <key-property name="idC" type="int">
+                <column name="ID_C" />
+            </key-property>
+        </composite-id>
+        <property name="unitOfMeasure" type="string">
+            <column name="UNIT_OF_MEASURE" length="6" />
+        </property>
+        <property name="minStock" type="java.lang.Integer">
+            <column name="MIN_STOCK" />
+        </property>
+        <property name="maxStock" type="java.lang.Integer">
+            <column name="MAX_STOCK" />
+        </property>
+        <property name="quantity" type="string">
+            <column name="QUANTITY" length="6" />
+        </property>
+    </class>
+</hibernate-mapping>

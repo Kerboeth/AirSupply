@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22 mars 2017 17:41:28 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="DataBase_Objects.Alert" table="ALERT" catalog="db_21401013" optimistic-lock="version">
+        <id name="idAlert" type="java.lang.Integer">
+            <column name="ID_ALERT" />
+            <generator class="identity" />
+        </id>
+        <property name="idC" type="int">
+            <column name="ID_C" not-null="true" />
+        </property>
+        <property name="idS" type="string">
+            <column name="ID_S" length="120" not-null="true" />
+        </property>
+        <property name="descriptionAlert" type="string">
+            <column name="DESCRIPTION_ALERT" />
+        </property>
+    </class>
+</hibernate-mapping>

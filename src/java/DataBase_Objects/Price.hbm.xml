@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22 mars 2017 17:41:28 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="DataBase_Objects.Price" table="PRICE" catalog="db_21401013" optimistic-lock="version">
+        <composite-id name="id" class="DataBase_Objects.PriceId">
+            <key-property name="priceDate" type="timestamp">
+                <column name="PRICE_DATE" length="19" />
+            </key-property>
+            <key-property name="poLineId" type="string">
+                <column name="PO_LINE_ID" length="125" />
+            </key-property>
+            <key-property name="idS" type="string">
+                <column name="ID_S" length="120" />
+            </key-property>
+        </composite-id>
+        <property name="oringialPrice" type="java.lang.Double">
+            <column name="ORINGIAL_PRICE" precision="20" />
+        </property>
+        <property name="price" type="java.lang.Double">
+            <column name="PRICE" precision="20" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://sip-web.ut-capitole.fr:3306/db_21401013</property>
+    <property name="hibernate.connection.username">21401013</property>
+    <property name="hibernate.connection.password">26222R</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.query.factory_class">org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory</property>
+    <mapping resource="DataBase_Objects/Requested.hbm.xml"/>
+    <mapping resource="DataBase_Objects/Payment.hbm.xml"/>
+    <mapping resource="DataBase_Objects/Material.hbm.xml"/>
+    <mapping resource="DataBase_Objects/TypeUser.hbm.xml"/>
+    <mapping resource="DataBase_Objects/Privilege.hbm.xml"/>
+    <mapping resource="DataBase_Objects/PoLine.hbm.xml"/>
+    <mapping resource="DataBase_Objects/PriceCalendar.hbm.xml"/>
+    <mapping resource="DataBase_Objects/MaterialVmi2.hbm.xml"/>
+    <mapping resource="DataBase_Objects/Price.hbm.xml"/>
+    <mapping resource="DataBase_Objects/VmiItem.hbm.xml"/>
+    <mapping resource="DataBase_Objects/PromiseCalendar.hbm.xml"/>
+    <mapping resource="DataBase_Objects/StockUpdateDate.hbm.xml"/>
+    <mapping resource="DataBase_Objects/HasA.hbm.xml"/>
+    <mapping resource="DataBase_Objects/Status.hbm.xml"/>
+    <mapping resource="DataBase_Objects/MaterialVmi.hbm.xml"/>
+    <mapping resource="DataBase_Objects/Received.hbm.xml"/>
+    <mapping resource="DataBase_Objects/Alert.hbm.xml"/>
+    <mapping resource="DataBase_Objects/Promised.hbm.xml"/>
+    <mapping resource="DataBase_Objects/SupplySite.hbm.xml"/>
+    <mapping resource="DataBase_Objects/CalendarAlert.hbm.xml"/>
+    <mapping resource="DataBase_Objects/Customer.hbm.xml"/>
+    <mapping resource="DataBase_Objects/ToBeAlert.hbm.xml"/>
+    <mapping resource="DataBase_Objects/ModificationCalendar.hbm.xml"/>
+    <mapping resource="DataBase_Objects/Supplier.hbm.xml"/>
+    <mapping resource="DataBase_Objects/Caracterise.hbm.xml"/>
+    <mapping resource="DataBase_Objects/Po.hbm.xml"/>
+    <mapping resource="DataBase_Objects/CustomerVmi.hbm.xml"/>
+    <mapping resource="DataBase_Objects/AirsupplyUser.hbm.xml"/>
+    <mapping resource="DataBase_Objects/RequestedCalendar.hbm.xml"/>
+    <mapping resource="DataBase_Objects/Vmi.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22 mars 2017 17:41:28 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="DataBase_Objects.Vmi" table="VMI" catalog="db_21401013" optimistic-lock="version">
+        <id name="referenceNumber" type="string">
+            <column name="REFERENCE_NUMBER" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="processKey" type="string">
+            <column name="PROCESS_KEY" />
+        </property>
+        <property name="dateCreationVmi" type="date">
+            <column name="DATE_CREATION_VMI" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

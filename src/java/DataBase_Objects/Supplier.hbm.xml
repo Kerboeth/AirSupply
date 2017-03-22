@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22 mars 2017 17:41:28 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="DataBase_Objects.Supplier" table="SUPPLIER" catalog="db_21401013" optimistic-lock="version">
+        <id name="idS" type="string">
+            <column name="ID_S" length="120" />
+            <generator class="assigned" />
+        </id>
+        <property name="nameS" type="string">
+            <column name="NAME_S" length="120" />
+        </property>
+        <property name="streetS" type="string">
+            <column name="STREET_S" length="120" />
+        </property>
+        <property name="zipS" type="string">
+            <column name="ZIP_S" length="5" />
+        </property>
+        <property name="cityS" type="string">
+            <column name="CITY_S" length="120" />
+        </property>
+        <property name="countrycodeS" type="string">
+            <column name="COUNTRYCODE_S" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>
