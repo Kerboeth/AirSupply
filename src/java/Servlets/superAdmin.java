@@ -53,6 +53,26 @@ public class superAdmin extends HttpServlet {
             t.rollback();
         }    
     }
+    
+    private void createSupplierAdmin(String inpName, String inpSurName, String inpEmail, String inpPassword){
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction t = session.beginTransaction();
+        try{    
+            AirsupplyUser newSupAdmin = new AirsupplyUser(0, 1, inpName, inpSurName, inpSurName, inpEmail, inpPassword);
+            Privilege newPriv = (Privilege) session.get(Privilege.class, 3);
+            Caracterise newCar = new Caracterise(new CaracteriseId(newSupAdmin.getIdTy(), newPriv.getIdPr()));
+            
+            t.commit();
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            t.rollback();
+        }    
+    }
+    
+    //private void scheduleExport TO DO!!!!!!!!!
+    //private void scheduleImport TO DO!!!!!!!!!
+    
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
