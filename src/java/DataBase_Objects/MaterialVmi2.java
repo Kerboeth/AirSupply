@@ -1,5 +1,5 @@
 package DataBase_Objects;
-// Generated 22 mars 2017 17:41:26 by Hibernate Tools 4.3.1
+// Generated 23 mars 2017 11:13:20 by Hibernate Tools 4.3.1
 
 
 
@@ -10,6 +10,11 @@ public class MaterialVmi2  implements java.io.Serializable {
 
 
      private MaterialVmi2Id id;
+     private Customer customer;
+     private MaterialVmi materialVmi;
+     private StockUpdateDate stockUpdateDate;
+     private Supplier supplier;
+     private VmiItem vmiItem;
      private String unitOfMeasure;
      private Integer minStock;
      private Integer maxStock;
@@ -19,11 +24,21 @@ public class MaterialVmi2  implements java.io.Serializable {
     }
 
 	
-    public MaterialVmi2(MaterialVmi2Id id) {
+    public MaterialVmi2(MaterialVmi2Id id, Customer customer, MaterialVmi materialVmi, StockUpdateDate stockUpdateDate, Supplier supplier, VmiItem vmiItem) {
         this.id = id;
+        this.customer = customer;
+        this.materialVmi = materialVmi;
+        this.stockUpdateDate = stockUpdateDate;
+        this.supplier = supplier;
+        this.vmiItem = vmiItem;
     }
-    public MaterialVmi2(MaterialVmi2Id id, String unitOfMeasure, Integer minStock, Integer maxStock, String quantity) {
+    public MaterialVmi2(MaterialVmi2Id id, Customer customer, MaterialVmi materialVmi, StockUpdateDate stockUpdateDate, Supplier supplier, VmiItem vmiItem, String unitOfMeasure, Integer minStock, Integer maxStock, String quantity) {
        this.id = id;
+       this.customer = customer;
+       this.materialVmi = materialVmi;
+       this.stockUpdateDate = stockUpdateDate;
+       this.supplier = supplier;
+       this.vmiItem = vmiItem;
        this.unitOfMeasure = unitOfMeasure;
        this.minStock = minStock;
        this.maxStock = maxStock;
@@ -36,6 +51,41 @@ public class MaterialVmi2  implements java.io.Serializable {
     
     public void setId(MaterialVmi2Id id) {
         this.id = id;
+    }
+    public Customer getCustomer() {
+        return this.customer;
+    }
+    
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+    public MaterialVmi getMaterialVmi() {
+        return this.materialVmi;
+    }
+    
+    public void setMaterialVmi(MaterialVmi materialVmi) {
+        this.materialVmi = materialVmi;
+    }
+    public StockUpdateDate getStockUpdateDate() {
+        return this.stockUpdateDate;
+    }
+    
+    public void setStockUpdateDate(StockUpdateDate stockUpdateDate) {
+        this.stockUpdateDate = stockUpdateDate;
+    }
+    public Supplier getSupplier() {
+        return this.supplier;
+    }
+    
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
+    }
+    public VmiItem getVmiItem() {
+        return this.vmiItem;
+    }
+    
+    public void setVmiItem(VmiItem vmiItem) {
+        this.vmiItem = vmiItem;
     }
     public String getUnitOfMeasure() {
         return this.unitOfMeasure;

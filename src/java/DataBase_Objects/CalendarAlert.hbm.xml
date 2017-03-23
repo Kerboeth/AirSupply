@@ -1,12 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 22 mars 2017 17:41:28 by Hibernate Tools 4.3.1 -->
+<!-- Generated 23 mars 2017 11:13:21 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="DataBase_Objects.CalendarAlert" table="CALENDAR_ALERT" catalog="db_21401013" optimistic-lock="version">
         <id name="dateAlert" type="timestamp">
             <column name="DATE_ALERT" length="19" />
             <generator class="assigned" />
         </id>
+        <set name="toBeAlerts" table="TO_BE_ALERT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DATE_ALERT" length="19" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.ToBeAlert" />
+        </set>
     </class>
 </hibernate-mapping>

@@ -1,12 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 22 mars 2017 17:41:28 by Hibernate Tools 4.3.1 -->
+<!-- Generated 23 mars 2017 11:13:21 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="DataBase_Objects.StockUpdateDate" table="STOCK_UPDATE_DATE" catalog="db_21401013" optimistic-lock="version">
         <id name="updateDate" type="timestamp">
             <column name="UPDATE_DATE" length="19" />
             <generator class="assigned" />
         </id>
+        <set name="materialVmi2s" table="MATERIAL_VMI_2" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="UPDATE_DATE" length="19" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.MaterialVmi2" />
+        </set>
     </class>
 </hibernate-mapping>

@@ -1,5 +1,5 @@
 package DataBase_Objects;
-// Generated 22 mars 2017 17:41:26 by Hibernate Tools 4.3.1
+// Generated 23 mars 2017 11:13:20 by Hibernate Tools 4.3.1
 
 
 
@@ -10,17 +10,23 @@ public class Received  implements java.io.Serializable {
 
 
      private ReceivedId id;
+     private PoLine poLine;
+     private Supplier supplier;
      private Integer receivedQuantity;
 
     public Received() {
     }
 
 	
-    public Received(ReceivedId id) {
+    public Received(ReceivedId id, PoLine poLine, Supplier supplier) {
         this.id = id;
+        this.poLine = poLine;
+        this.supplier = supplier;
     }
-    public Received(ReceivedId id, Integer receivedQuantity) {
+    public Received(ReceivedId id, PoLine poLine, Supplier supplier, Integer receivedQuantity) {
        this.id = id;
+       this.poLine = poLine;
+       this.supplier = supplier;
        this.receivedQuantity = receivedQuantity;
     }
    
@@ -30,6 +36,20 @@ public class Received  implements java.io.Serializable {
     
     public void setId(ReceivedId id) {
         this.id = id;
+    }
+    public PoLine getPoLine() {
+        return this.poLine;
+    }
+    
+    public void setPoLine(PoLine poLine) {
+        this.poLine = poLine;
+    }
+    public Supplier getSupplier() {
+        return this.supplier;
+    }
+    
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
     }
     public Integer getReceivedQuantity() {
         return this.receivedQuantity;

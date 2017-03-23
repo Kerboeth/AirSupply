@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 22 mars 2017 17:41:28 by Hibernate Tools 4.3.1 -->
+<!-- Generated 23 mars 2017 11:13:21 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="DataBase_Objects.Supplier" table="SUPPLIER" catalog="db_21401013" optimistic-lock="version">
         <id name="idS" type="string">
@@ -23,5 +23,53 @@
         <property name="countrycodeS" type="string">
             <column name="COUNTRYCODE_S" length="50" />
         </property>
+        <set name="supplySites" table="SUPPLY_SITE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_S" length="120" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.SupplySite" />
+        </set>
+        <set name="materialVmi2s" table="MATERIAL_VMI_2" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_S" length="120" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.MaterialVmi2" />
+        </set>
+        <set name="prices" table="PRICE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_S" length="120" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.Price" />
+        </set>
+        <set name="promiseds" table="PROMISED" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_S" length="120" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.Promised" />
+        </set>
+        <set name="receiveds" table="RECEIVED" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_S" length="120" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.Received" />
+        </set>
+        <set name="airsupplyUsers" table="AIRSUPPLY_USER" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_S" length="120" />
+            </key>
+            <one-to-many class="DataBase_Objects.AirsupplyUser" />
+        </set>
+        <set name="requesteds" table="REQUESTED" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_S" length="120" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.Requested" />
+        </set>
+        <set name="alerts" table="ALERT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_S" length="120" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.Alert" />
+        </set>
     </class>
 </hibernate-mapping>

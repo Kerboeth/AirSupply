@@ -1,5 +1,5 @@
 package DataBase_Objects;
-// Generated 22 mars 2017 17:41:26 by Hibernate Tools 4.3.1
+// Generated 23 mars 2017 11:13:20 by Hibernate Tools 4.3.1
 
 
 
@@ -10,6 +10,9 @@ public class Price  implements java.io.Serializable {
 
 
      private PriceId id;
+     private PoLine poLine;
+     private PriceCalendar priceCalendar;
+     private Supplier supplier;
      private Double oringialPrice;
      private Double price;
 
@@ -17,11 +20,17 @@ public class Price  implements java.io.Serializable {
     }
 
 	
-    public Price(PriceId id) {
+    public Price(PriceId id, PoLine poLine, PriceCalendar priceCalendar, Supplier supplier) {
         this.id = id;
+        this.poLine = poLine;
+        this.priceCalendar = priceCalendar;
+        this.supplier = supplier;
     }
-    public Price(PriceId id, Double oringialPrice, Double price) {
+    public Price(PriceId id, PoLine poLine, PriceCalendar priceCalendar, Supplier supplier, Double oringialPrice, Double price) {
        this.id = id;
+       this.poLine = poLine;
+       this.priceCalendar = priceCalendar;
+       this.supplier = supplier;
        this.oringialPrice = oringialPrice;
        this.price = price;
     }
@@ -32,6 +41,27 @@ public class Price  implements java.io.Serializable {
     
     public void setId(PriceId id) {
         this.id = id;
+    }
+    public PoLine getPoLine() {
+        return this.poLine;
+    }
+    
+    public void setPoLine(PoLine poLine) {
+        this.poLine = poLine;
+    }
+    public PriceCalendar getPriceCalendar() {
+        return this.priceCalendar;
+    }
+    
+    public void setPriceCalendar(PriceCalendar priceCalendar) {
+        this.priceCalendar = priceCalendar;
+    }
+    public Supplier getSupplier() {
+        return this.supplier;
+    }
+    
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
     }
     public Double getOringialPrice() {
         return this.oringialPrice;

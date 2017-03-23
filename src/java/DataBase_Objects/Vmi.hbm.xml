@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 22 mars 2017 17:41:28 by Hibernate Tools 4.3.1 -->
+<!-- Generated 23 mars 2017 11:13:21 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="DataBase_Objects.Vmi" table="VMI" catalog="db_21401013" optimistic-lock="version">
         <id name="referenceNumber" type="string">
@@ -14,5 +14,11 @@
         <property name="dateCreationVmi" type="date">
             <column name="DATE_CREATION_VMI" length="10" />
         </property>
+        <set name="vmiItems" table="VMI_ITEM" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="REFERENCE_NUMBER" length="50" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.VmiItem" />
+        </set>
     </class>
 </hibernate-mapping>

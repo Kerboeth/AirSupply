@@ -1,5 +1,5 @@
 package DataBase_Objects;
-// Generated 22 mars 2017 17:41:26 by Hibernate Tools 4.3.1
+// Generated 23 mars 2017 11:13:20 by Hibernate Tools 4.3.1
 
 
 
@@ -10,17 +10,26 @@ public class Requested  implements java.io.Serializable {
 
 
      private RequestedId id;
+     private PoLine poLine;
+     private RequestedCalendar requestedCalendar;
+     private Supplier supplier;
      private Integer requestedQuantity;
 
     public Requested() {
     }
 
 	
-    public Requested(RequestedId id) {
+    public Requested(RequestedId id, PoLine poLine, RequestedCalendar requestedCalendar, Supplier supplier) {
         this.id = id;
+        this.poLine = poLine;
+        this.requestedCalendar = requestedCalendar;
+        this.supplier = supplier;
     }
-    public Requested(RequestedId id, Integer requestedQuantity) {
+    public Requested(RequestedId id, PoLine poLine, RequestedCalendar requestedCalendar, Supplier supplier, Integer requestedQuantity) {
        this.id = id;
+       this.poLine = poLine;
+       this.requestedCalendar = requestedCalendar;
+       this.supplier = supplier;
        this.requestedQuantity = requestedQuantity;
     }
    
@@ -30,6 +39,27 @@ public class Requested  implements java.io.Serializable {
     
     public void setId(RequestedId id) {
         this.id = id;
+    }
+    public PoLine getPoLine() {
+        return this.poLine;
+    }
+    
+    public void setPoLine(PoLine poLine) {
+        this.poLine = poLine;
+    }
+    public RequestedCalendar getRequestedCalendar() {
+        return this.requestedCalendar;
+    }
+    
+    public void setRequestedCalendar(RequestedCalendar requestedCalendar) {
+        this.requestedCalendar = requestedCalendar;
+    }
+    public Supplier getSupplier() {
+        return this.supplier;
+    }
+    
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
     }
     public Integer getRequestedQuantity() {
         return this.requestedQuantity;

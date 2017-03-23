@@ -1,5 +1,5 @@
 package DataBase_Objects;
-// Generated 22 mars 2017 17:41:26 by Hibernate Tools 4.3.1
+// Generated 23 mars 2017 11:13:20 by Hibernate Tools 4.3.1
 
 
 
@@ -10,12 +10,18 @@ public class ToBeAlert  implements java.io.Serializable {
 
 
      private ToBeAlertId id;
+     private Alert alert;
+     private CalendarAlert calendarAlert;
+     private PoLine poLine;
 
     public ToBeAlert() {
     }
 
-    public ToBeAlert(ToBeAlertId id) {
+    public ToBeAlert(ToBeAlertId id, Alert alert, CalendarAlert calendarAlert, PoLine poLine) {
        this.id = id;
+       this.alert = alert;
+       this.calendarAlert = calendarAlert;
+       this.poLine = poLine;
     }
    
     public ToBeAlertId getId() {
@@ -24,6 +30,27 @@ public class ToBeAlert  implements java.io.Serializable {
     
     public void setId(ToBeAlertId id) {
         this.id = id;
+    }
+    public Alert getAlert() {
+        return this.alert;
+    }
+    
+    public void setAlert(Alert alert) {
+        this.alert = alert;
+    }
+    public CalendarAlert getCalendarAlert() {
+        return this.calendarAlert;
+    }
+    
+    public void setCalendarAlert(CalendarAlert calendarAlert) {
+        this.calendarAlert = calendarAlert;
+    }
+    public PoLine getPoLine() {
+        return this.poLine;
+    }
+    
+    public void setPoLine(PoLine poLine) {
+        this.poLine = poLine;
     }
 
 

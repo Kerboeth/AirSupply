@@ -1,5 +1,5 @@
 package DataBase_Objects;
-// Generated 22 mars 2017 17:41:26 by Hibernate Tools 4.3.1
+// Generated 23 mars 2017 11:13:20 by Hibernate Tools 4.3.1
 
 
 
@@ -10,17 +10,26 @@ public class HasA  implements java.io.Serializable {
 
 
      private HasAId id;
+     private ModificationCalendar modificationCalendar;
+     private PoLine poLine;
+     private Status status;
      private String commentary;
 
     public HasA() {
     }
 
 	
-    public HasA(HasAId id) {
+    public HasA(HasAId id, ModificationCalendar modificationCalendar, PoLine poLine, Status status) {
         this.id = id;
+        this.modificationCalendar = modificationCalendar;
+        this.poLine = poLine;
+        this.status = status;
     }
-    public HasA(HasAId id, String commentary) {
+    public HasA(HasAId id, ModificationCalendar modificationCalendar, PoLine poLine, Status status, String commentary) {
        this.id = id;
+       this.modificationCalendar = modificationCalendar;
+       this.poLine = poLine;
+       this.status = status;
        this.commentary = commentary;
     }
    
@@ -30,6 +39,27 @@ public class HasA  implements java.io.Serializable {
     
     public void setId(HasAId id) {
         this.id = id;
+    }
+    public ModificationCalendar getModificationCalendar() {
+        return this.modificationCalendar;
+    }
+    
+    public void setModificationCalendar(ModificationCalendar modificationCalendar) {
+        this.modificationCalendar = modificationCalendar;
+    }
+    public PoLine getPoLine() {
+        return this.poLine;
+    }
+    
+    public void setPoLine(PoLine poLine) {
+        this.poLine = poLine;
+    }
+    public Status getStatus() {
+        return this.status;
+    }
+    
+    public void setStatus(Status status) {
+        this.status = status;
     }
     public String getCommentary() {
         return this.commentary;

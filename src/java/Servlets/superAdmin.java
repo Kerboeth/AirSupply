@@ -6,8 +6,6 @@
 package Servlets;
 
 import DataBase_Objects.AirsupplyUser;
-import DataBase_Objects.Caracterise;
-import DataBase_Objects.CaracteriseId;
 import DataBase_Objects.HibernateUtil;
 import DataBase_Objects.Privilege;
 import java.io.IOException;
@@ -39,35 +37,35 @@ public class superAdmin extends HttpServlet {
         
     }
     
-    private void createCustomerAdmin(String inpName, String inpSurName, String inpEmail, String inpPassword){
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        Transaction t = session.beginTransaction();
-        try{    
-            AirsupplyUser newCusAdmin = new AirsupplyUser(0, 1, inpName, inpSurName, inpSurName, inpEmail, inpPassword);
-            Privilege newPriv = (Privilege) session.get(Privilege.class, 2);
-            Caracterise newCar = new Caracterise(new CaracteriseId(newCusAdmin.getIdTy(), newPriv.getIdPr()));
-            
-            t.commit();
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-            t.rollback();
-        }    
-    }
-    
-    private void createSupplierAdmin(String inpName, String inpSurName, String inpEmail, String inpPassword){
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        Transaction t = session.beginTransaction();
-        try{    
-            AirsupplyUser newSupAdmin = new AirsupplyUser(0, 1, inpName, inpSurName, inpSurName, inpEmail, inpPassword);
-            Privilege newPriv = (Privilege) session.get(Privilege.class, 3);
-            Caracterise newCar = new Caracterise(new CaracteriseId(newSupAdmin.getIdTy(), newPriv.getIdPr()));
-            
-            t.commit();
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-            t.rollback();
-        }    
-    }
+//    private void createCustomerAdmin(String inpName, String inpSurName, String inpEmail, String inpPassword){
+//        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+//        Transaction t = session.beginTransaction();
+//        try{    
+//            AirsupplyUser newCusAdmin = new AirsupplyUser(0, 1, inpName, inpSurName, inpSurName, inpEmail, inpPassword);
+//            Privilege newPriv = (Privilege) session.get(Privilege.class, 2);
+//            //Caracterise newCar = new Caracterise(new CaracteriseId(newCusAdmin.getIdTy(), newPriv.getIdPr()));
+//            
+//            t.commit();
+//        }catch(Exception e){
+//            System.out.println(e.getMessage());
+//            t.rollback();
+//        }    
+//    }
+//    
+//    private void createSupplierAdmin(String inpName, String inpSurName, String inpEmail, String inpPassword){
+//        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+//        Transaction t = session.beginTransaction();
+//        try{    
+//            AirsupplyUser newSupAdmin = new AirsupplyUser(0, 1, inpName, inpSurName, inpSurName, inpEmail, inpPassword);
+//            Privilege newPriv = (Privilege) session.get(Privilege.class, 3);
+//            //Caracterise newCar = new Caracterise(new CaracteriseId(newSupAdmin.getIdTy(), newPriv.getIdPr()));
+//            
+//            t.commit();
+//        }catch(Exception e){
+//            System.out.println(e.getMessage());
+//            t.rollback();
+//        }    
+//    }
     
     //private void scheduleExport TO DO!!!!!!!!!
     //private void scheduleImport TO DO!!!!!!!!!

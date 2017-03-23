@@ -1,5 +1,5 @@
 package DataBase_Objects;
-// Generated 22 mars 2017 17:41:26 by Hibernate Tools 4.3.1
+// Generated 23 mars 2017 11:13:20 by Hibernate Tools 4.3.1
 
 
 
@@ -10,18 +10,18 @@ public class SupplySite  implements java.io.Serializable {
 
 
      private Integer idSypplySite;
-     private String idS;
+     private Supplier supplier;
      private String supplierSiteCity;
 
     public SupplySite() {
     }
 
 	
-    public SupplySite(String idS) {
-        this.idS = idS;
+    public SupplySite(Supplier supplier) {
+        this.supplier = supplier;
     }
-    public SupplySite(String idS, String supplierSiteCity) {
-       this.idS = idS;
+    public SupplySite(Supplier supplier, String supplierSiteCity) {
+       this.supplier = supplier;
        this.supplierSiteCity = supplierSiteCity;
     }
    
@@ -32,12 +32,12 @@ public class SupplySite  implements java.io.Serializable {
     public void setIdSypplySite(Integer idSypplySite) {
         this.idSypplySite = idSypplySite;
     }
-    public String getIdS() {
-        return this.idS;
+    public Supplier getSupplier() {
+        return this.supplier;
     }
     
-    public void setIdS(String idS) {
-        this.idS = idS;
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
     }
     public String getSupplierSiteCity() {
         return this.supplierSiteCity;

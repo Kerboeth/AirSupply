@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 22 mars 2017 17:41:28 by Hibernate Tools 4.3.1 -->
+<!-- Generated 23 mars 2017 11:13:21 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="DataBase_Objects.Status" table="STATUS" catalog="db_21401013" optimistic-lock="version">
         <id name="idStatus" type="int">
@@ -11,5 +11,11 @@
         <property name="descriptionSatus" type="string">
             <column name="DESCRIPTION_SATUS" length="50" />
         </property>
+        <set name="hasAs" table="HAS_A" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_STATUS" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.HasA" />
+        </set>
     </class>
 </hibernate-mapping>

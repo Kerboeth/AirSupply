@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 22 mars 2017 17:41:28 by Hibernate Tools 4.3.1 -->
+<!-- Generated 23 mars 2017 11:13:21 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="DataBase_Objects.Requested" table="REQUESTED" catalog="db_21401013" optimistic-lock="version">
         <composite-id name="id" class="DataBase_Objects.RequestedId">
@@ -15,6 +15,15 @@
                 <column name="ID_S" length="120" />
             </key-property>
         </composite-id>
+        <many-to-one name="poLine" class="DataBase_Objects.PoLine" update="false" insert="false" fetch="select">
+            <column name="PO_LINE_ID" length="125" not-null="true" />
+        </many-to-one>
+        <many-to-one name="requestedCalendar" class="DataBase_Objects.RequestedCalendar" update="false" insert="false" fetch="select">
+            <column name="REQUESTED_DATE" length="19" not-null="true" />
+        </many-to-one>
+        <many-to-one name="supplier" class="DataBase_Objects.Supplier" update="false" insert="false" fetch="select">
+            <column name="ID_S" length="120" not-null="true" />
+        </many-to-one>
         <property name="requestedQuantity" type="java.lang.Integer">
             <column name="REQUESTED_QUANTITY" />
         </property>

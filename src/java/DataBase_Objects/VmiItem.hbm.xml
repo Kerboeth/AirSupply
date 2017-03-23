@@ -1,15 +1,21 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 22 mars 2017 17:41:28 by Hibernate Tools 4.3.1 -->
+<!-- Generated 23 mars 2017 11:13:21 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="DataBase_Objects.VmiItem" table="VMI_ITEM" catalog="db_21401013" optimistic-lock="version">
         <id name="referenceItem" type="string">
             <column name="REFERENCE_ITEM" length="50" />
             <generator class="assigned" />
         </id>
-        <property name="referenceNumber" type="string">
+        <many-to-one name="vmi" class="DataBase_Objects.Vmi" fetch="select">
             <column name="REFERENCE_NUMBER" length="50" not-null="true" />
-        </property>
+        </many-to-one>
+        <set name="materialVmi2s" table="MATERIAL_VMI_2" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="REFERENCE_ITEM" length="50" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.MaterialVmi2" />
+        </set>
     </class>
 </hibernate-mapping>

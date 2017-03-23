@@ -1,27 +1,61 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 22 mars 2017 17:41:28 by Hibernate Tools 4.3.1 -->
+<!-- Generated 23 mars 2017 11:13:21 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="DataBase_Objects.PoLine" table="PO_LINE" catalog="db_21401013" optimistic-lock="version">
         <id name="poLineId" type="string">
             <column name="PO_LINE_ID" length="125" />
             <generator class="assigned" />
         </id>
-        <property name="idCm" type="string">
+        <many-to-one name="material" class="DataBase_Objects.Material" fetch="select">
             <column name="ID_CM" length="120" not-null="true" />
-        </property>
-        <property name="idSm" type="string">
             <column name="ID_SM" length="120" not-null="true" />
-        </property>
-        <property name="poNumber" type="string">
+        </many-to-one>
+        <many-to-one name="po" class="DataBase_Objects.Po" fetch="select">
             <column name="PO_NUMBER" length="120" not-null="true" />
-        </property>
+        </many-to-one>
         <property name="poLineNumber" type="string">
             <column name="PO_LINE_NUMBER" length="120" />
         </property>
         <property name="creationDate" type="timestamp">
             <column name="CREATION_DATE" length="19" />
         </property>
+        <set name="prices" table="PRICE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PO_LINE_ID" length="125" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.Price" />
+        </set>
+        <set name="promiseds" table="PROMISED" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PO_LINE_ID" length="125" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.Promised" />
+        </set>
+        <set name="toBeAlerts" table="TO_BE_ALERT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PO_LINE_ID" length="125" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.ToBeAlert" />
+        </set>
+        <set name="hasAs" table="HAS_A" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PO_LINE_ID" length="125" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.HasA" />
+        </set>
+        <set name="receiveds" table="RECEIVED" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PO_LINE_ID" length="125" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.Received" />
+        </set>
+        <set name="requesteds" table="REQUESTED" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PO_LINE_ID" length="125" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.Requested" />
+        </set>
     </class>
 </hibernate-mapping>

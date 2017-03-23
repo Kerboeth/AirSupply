@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 22 mars 2017 17:41:28 by Hibernate Tools 4.3.1 -->
+<!-- Generated 23 mars 2017 11:13:21 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="DataBase_Objects.CustomerVmi" table="CUSTOMER_VMI" catalog="db_21401013" optimistic-lock="version">
         <id name="shipIdC" type="int">
             <column name="SHIP_ID_C" />
             <generator class="assigned" />
         </id>
-        <property name="idC" type="int">
+        <many-to-one name="customer" class="DataBase_Objects.Customer" fetch="select">
             <column name="ID_C" not-null="true" />
-        </property>
+        </many-to-one>
         <property name="shipName1" type="string">
             <column name="SHIP_NAME_1" length="50" />
         </property>

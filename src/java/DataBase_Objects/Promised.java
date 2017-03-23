@@ -1,5 +1,5 @@
 package DataBase_Objects;
-// Generated 22 mars 2017 17:41:26 by Hibernate Tools 4.3.1
+// Generated 23 mars 2017 11:13:20 by Hibernate Tools 4.3.1
 
 
 
@@ -10,17 +10,26 @@ public class Promised  implements java.io.Serializable {
 
 
      private PromisedId id;
+     private PoLine poLine;
+     private PromiseCalendar promiseCalendar;
+     private Supplier supplier;
      private Integer quantityPromised;
 
     public Promised() {
     }
 
 	
-    public Promised(PromisedId id) {
+    public Promised(PromisedId id, PoLine poLine, PromiseCalendar promiseCalendar, Supplier supplier) {
         this.id = id;
+        this.poLine = poLine;
+        this.promiseCalendar = promiseCalendar;
+        this.supplier = supplier;
     }
-    public Promised(PromisedId id, Integer quantityPromised) {
+    public Promised(PromisedId id, PoLine poLine, PromiseCalendar promiseCalendar, Supplier supplier, Integer quantityPromised) {
        this.id = id;
+       this.poLine = poLine;
+       this.promiseCalendar = promiseCalendar;
+       this.supplier = supplier;
        this.quantityPromised = quantityPromised;
     }
    
@@ -30,6 +39,27 @@ public class Promised  implements java.io.Serializable {
     
     public void setId(PromisedId id) {
         this.id = id;
+    }
+    public PoLine getPoLine() {
+        return this.poLine;
+    }
+    
+    public void setPoLine(PoLine poLine) {
+        this.poLine = poLine;
+    }
+    public PromiseCalendar getPromiseCalendar() {
+        return this.promiseCalendar;
+    }
+    
+    public void setPromiseCalendar(PromiseCalendar promiseCalendar) {
+        this.promiseCalendar = promiseCalendar;
+    }
+    public Supplier getSupplier() {
+        return this.supplier;
+    }
+    
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
     }
     public Integer getQuantityPromised() {
         return this.quantityPromised;

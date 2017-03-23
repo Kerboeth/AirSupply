@@ -1,5 +1,5 @@
 package DataBase_Objects;
-// Generated 22 mars 2017 17:41:26 by Hibernate Tools 4.3.1
+// Generated 23 mars 2017 11:13:20 by Hibernate Tools 4.3.1
 
 
 
@@ -10,7 +10,7 @@ public class CustomerVmi  implements java.io.Serializable {
 
 
      private int shipIdC;
-     private int idC;
+     private Customer customer;
      private String shipName1;
      private String shipName3;
      private String shipStreet;
@@ -22,13 +22,13 @@ public class CustomerVmi  implements java.io.Serializable {
     }
 
 	
-    public CustomerVmi(int shipIdC, int idC) {
+    public CustomerVmi(int shipIdC, Customer customer) {
         this.shipIdC = shipIdC;
-        this.idC = idC;
+        this.customer = customer;
     }
-    public CustomerVmi(int shipIdC, int idC, String shipName1, String shipName3, String shipStreet, String shipZipCode, String shipCity, String shipCountryCode) {
+    public CustomerVmi(int shipIdC, Customer customer, String shipName1, String shipName3, String shipStreet, String shipZipCode, String shipCity, String shipCountryCode) {
        this.shipIdC = shipIdC;
-       this.idC = idC;
+       this.customer = customer;
        this.shipName1 = shipName1;
        this.shipName3 = shipName3;
        this.shipStreet = shipStreet;
@@ -44,12 +44,12 @@ public class CustomerVmi  implements java.io.Serializable {
     public void setShipIdC(int shipIdC) {
         this.shipIdC = shipIdC;
     }
-    public int getIdC() {
-        return this.idC;
+    public Customer getCustomer() {
+        return this.customer;
     }
     
-    public void setIdC(int idC) {
-        this.idC = idC;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
     public String getShipName1() {
         return this.shipName1;

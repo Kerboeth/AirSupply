@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 22 mars 2017 17:41:28 by Hibernate Tools 4.3.1 -->
+<!-- Generated 23 mars 2017 11:13:21 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="DataBase_Objects.Customer" table="CUSTOMER" catalog="db_21401013" optimistic-lock="version">
         <id name="idC" type="int">
@@ -23,5 +23,35 @@
         <property name="countrycodeC" type="string">
             <column name="COUNTRYCODE_C" length="5" />
         </property>
+        <set name="pos" table="PO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_C" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.Po" />
+        </set>
+        <set name="airsupplyUsers" table="AIRSUPPLY_USER" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_C" />
+            </key>
+            <one-to-many class="DataBase_Objects.AirsupplyUser" />
+        </set>
+        <set name="alerts" table="ALERT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_C" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.Alert" />
+        </set>
+        <set name="materialVmi2s" table="MATERIAL_VMI_2" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_C" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.MaterialVmi2" />
+        </set>
+        <set name="customerVmis" table="CUSTOMER_VMI" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_C" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.CustomerVmi" />
+        </set>
     </class>
 </hibernate-mapping>

@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 22 mars 2017 17:41:28 by Hibernate Tools 4.3.1 -->
+<!-- Generated 23 mars 2017 11:13:21 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="DataBase_Objects.Po" table="PO" catalog="db_21401013" optimistic-lock="version">
         <id name="poNumber" type="string">
             <column name="PO_NUMBER" length="120" />
             <generator class="assigned" />
         </id>
-        <property name="idPayment" type="int">
-            <column name="ID_PAYMENT" not-null="true" />
-        </property>
-        <property name="idC" type="int">
+        <many-to-one name="customer" class="DataBase_Objects.Customer" fetch="select">
             <column name="ID_C" not-null="true" />
-        </property>
+        </many-to-one>
+        <many-to-one name="payment" class="DataBase_Objects.Payment" fetch="select">
+            <column name="ID_PAYMENT" not-null="true" />
+        </many-to-one>
         <property name="publicationDate" type="timestamp">
             <column name="PUBLICATION_DATE" length="19" />
         </property>
@@ -26,5 +26,11 @@
         <property name="currency" type="string">
             <column name="CURRENCY" length="10" />
         </property>
+        <set name="poLines" table="PO_LINE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PO_NUMBER" length="120" not-null="true" />
+            </key>
+            <one-to-many class="DataBase_Objects.PoLine" />
+        </set>
     </class>
 </hibernate-mapping>

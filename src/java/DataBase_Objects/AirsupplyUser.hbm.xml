@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 22 mars 2017 17:41:28 by Hibernate Tools 4.3.1 -->
+<!-- Generated 23 mars 2017 11:13:21 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="DataBase_Objects.AirsupplyUser" table="AIRSUPPLY_USER" catalog="db_21401013" optimistic-lock="version">
         <id name="idUser" type="java.lang.Integer">
             <column name="ID_USER" />
             <generator class="identity" />
         </id>
-        <property name="idC" type="java.lang.Integer">
+        <many-to-one name="customer" class="DataBase_Objects.Customer" fetch="select">
             <column name="ID_C" />
-        </property>
-        <property name="idTy" type="int">
-            <column name="ID_TY" not-null="true" />
-        </property>
-        <property name="idS" type="string">
+        </many-to-one>
+        <many-to-one name="supplier" class="DataBase_Objects.Supplier" fetch="select">
             <column name="ID_S" length="120" />
-        </property>
+        </many-to-one>
+        <many-to-one name="typeUser" class="DataBase_Objects.TypeUser" fetch="select">
+            <column name="ID_TY" not-null="true" />
+        </many-to-one>
         <property name="name" type="string">
             <column name="NAME" length="120" />
         </property>
@@ -29,5 +29,13 @@
         <property name="password" type="string">
             <column name="PASSWORD" />
         </property>
+        <set name="privileges" table="CARACTERISE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_USER" not-null="true" />
+            </key>
+            <many-to-many entity-name="DataBase_Objects.Privilege">
+                <column name="ID_PR" not-null="true" />
+            </many-to-many>
+        </set>
     </class>
 </hibernate-mapping>
